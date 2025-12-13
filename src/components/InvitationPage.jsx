@@ -7,7 +7,7 @@ const InvitationPage = ({ musicEnabled }) => {
   const [showMapModal, setShowMapModal] = useState(false)
   const [mapLocation, setMapLocation] = useState(null) // 'fiesta' o 'misa'
   const audioRef = useRef(null)
-  const basePath = import.meta.env.BASE_URL
+  const basePath = '/InvitacionFer/'
 
   // Links de navegación para Fiesta
   const FIESTA_GOOGLE_MAPS = 'https://maps.app.goo.gl/7itQwNXLR2pbwS5T7'
