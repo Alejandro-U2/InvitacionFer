@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/InvitacionFer/',
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'esbuild',
