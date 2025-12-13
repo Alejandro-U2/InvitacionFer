@@ -7,6 +7,7 @@ const InvitationPage = ({ musicEnabled }) => {
   const [showMapModal, setShowMapModal] = useState(false)
   const [mapLocation, setMapLocation] = useState(null) // 'fiesta' o 'misa'
   const audioRef = useRef(null)
+  const basePath = import.meta.env.BASE_URL
 
   // Links de navegación para Fiesta
   const FIESTA_GOOGLE_MAPS = 'https://maps.app.goo.gl/7itQwNXLR2pbwS5T7'
@@ -24,7 +25,7 @@ const InvitationPage = ({ musicEnabled }) => {
   // Cargar música cuando musicEnabled es true
   useEffect(() => {
     if (musicEnabled && !audioRef.current) {
-      audioRef.current = new Audio('/music/cancion1.mp3')
+      audioRef.current = new Audio(`${basePath}music/cancion1.mp3`)
       audioRef.current.loop = true
       audioRef.current.volume = 0.5
       
@@ -150,14 +151,14 @@ const InvitationPage = ({ musicEnabled }) => {
       {/* Sección de bienvenida/hero */}
       <div 
         className="min-h-screen flex items-center justify-center px-4 py-12 relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/fondo.webp)' }}
+        style={{ backgroundImage: `url(${basePath}images/fondo.webp)` }}
       >
         {/* Overlay suave para mejorar legibilidad */}
         <div className="absolute inset-0 bg-white/40"></div>
 
         {/* Decoración floral superior */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 md:w-72 lg:w-80 z-10 rotate-180">
-          <img src="/images/Flor1.webp" alt="Flor decorativa" className="w-full h-auto" />
+          <img src={`${basePath}images/Flor1.webp`} alt="Flor decorativa" className="w-full h-auto" />
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative z-20 px-4">
@@ -214,7 +215,7 @@ const InvitationPage = ({ musicEnabled }) => {
         {/* Divisor SVG flotante superpuesto */}
         <div className="absolute -top-16 sm:-top-24 md:-top-44 lg:-top-52 left-0 w-full z-10 pointer-events-none">
           <img 
-            src="/images/curvas01.svg" 
+            src={`${basePath}images/curvas01.svg`} 
             alt="Divisor" 
             className="w-full h-auto"
           />
@@ -257,7 +258,7 @@ const InvitationPage = ({ musicEnabled }) => {
 
           {/* Cuenta regresiva */}
           <div className="relative text-center mb-8">
-            <img src="/images/contador.png" alt="Contador" className="w-full max-w-3xl md:max-w-2xl h-auto mx-auto" />
+            <img src={`${basePath}images/contador.png`} alt="Contador" className="w-full max-w-3xl md:max-w-2xl h-auto mx-auto" />
             
             {/* Cuenta regresiva en formato horizontal */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md md:max-w-sm px-4">
@@ -314,7 +315,7 @@ const InvitationPage = ({ musicEnabled }) => {
         
         {/* Imagen decorativa de líneas */}
         <div className="w-screen md:w-full">
-          <img src="/images/lineas01.svg" alt="Líneas decorativas" className="w-full h-auto" />
+          <img src={`${basePath}images/lineas01.svg`} alt="Líneas decorativas" className="w-full h-auto" />
         </div>
 
         {/* Sección Fiesta */}
@@ -326,7 +327,7 @@ const InvitationPage = ({ musicEnabled }) => {
                 <div className="w-28 h-28 md:w-40 md:h-40 bg-gradient-to-br from-[#B8936E] to-[#A07D5C] rounded-full shadow-2xl flex items-center justify-center animate-pulse">
                   <div className="w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center">
                     <img 
-                      src="/images/Fiesta.svg" 
+                      src={`${basePath}images/Fiesta.svg`} 
                       alt="Decoración fiesta" 
                       className="w-12 h-12 md:w-20 md:h-20 animate-shake-slow" 
                       style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
@@ -451,7 +452,7 @@ const InvitationPage = ({ musicEnabled }) => {
                 <div className="w-28 h-28 md:w-40 md:h-40 bg-gradient-to-br from-[#B8936E] to-[#A07D5C] rounded-full shadow-2xl flex items-center justify-center animate-pulse">
                   <div className="w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center">
                     <img 
-                      src="/images/iglesia.svg" 
+                      src={`${basePath}images/iglesia.svg`} 
                       alt="Decoración misa" 
                       className="w-12 h-12 md:w-20 md:h-20 animate-shake-slow" 
                       style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
@@ -571,7 +572,7 @@ const InvitationPage = ({ musicEnabled }) => {
         <div className="relative">
           <div className="absolute inset-0 -top-8 sm:-top-12 md:-top-16 lg:-top-20 z-20 pointer-events-none">
             <img 
-              src="/images/curvas02.svg" 
+              src={`${basePath}images/curvas02.svg`} 
               alt="Divisor decorativo" 
               className="w-full h-auto"
             />
@@ -588,7 +589,7 @@ const InvitationPage = ({ musicEnabled }) => {
             {/* Flor decorativa */}
             <div className="flex justify-center mb-12">
               <img 
-                src="/images/Flores2.png" 
+                src={`${basePath}images/Flores2.png`} 
                 alt="Flores decorativas" 
                 className="w-48 h-48 md:w-56 md:h-56 object-contain ml-4 md:ml-6"
               />
@@ -600,7 +601,7 @@ const InvitationPage = ({ musicEnabled }) => {
               <div className="bg-white/50 rounded-lg p-8 shadow-md">
                 <div className="flex justify-center mb-4">
                   <img 
-                    src="/images/musica.svg" 
+                    src={`${basePath}images/musica.svg`} 
                     alt="Música" 
                     className="w-16 h-16 md:w-20 md:h-20"
                     style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
@@ -620,7 +621,7 @@ const InvitationPage = ({ musicEnabled }) => {
               <div className="bg-white/50 rounded-lg p-8 shadow-md">
                 <div className="flex justify-center mb-4">
                   <img 
-                    src="/images/vestuario.svg" 
+                    src={`${basePath}images/vestuario.svg`} 
                     alt="Dress Code" 
                     className="w-16 h-16 md:w-20 md:h-20"
                     style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
@@ -640,7 +641,7 @@ const InvitationPage = ({ musicEnabled }) => {
               <div className="bg-white/50 rounded-lg p-8 shadow-md">
                 <div className="flex justify-center mb-4">
                   <img 
-                    src="/images/tips.svg" 
+                    src={`${basePath}images/tips.svg`} 
                     alt="Confirmación" 
                     className="w-16 h-16 md:w-20 md:h-20"
                     style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
@@ -668,7 +669,7 @@ const InvitationPage = ({ musicEnabled }) => {
             {/* Icono de regalo */}
             <div className="flex justify-center mb-8">
               <img 
-                src="/images/regalo.svg" 
+                src={`${basePath}images/regalo.svg`} 
                 alt="Regalo" 
                 className="w-20 h-20 md:w-24 md:h-24"
               />
@@ -692,7 +693,7 @@ const InvitationPage = ({ musicEnabled }) => {
               <div className="absolute -top-12 md:-top-16 left-1/2 transform -translate-x-1/2">
                 <div className="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full shadow-lg flex items-center justify-center">
                   <img 
-                    src={`/images/${modalOpen === 'musica' ? 'musica' : modalOpen === 'dresscode' ? 'vestuario' : modalOpen === 'regalos' ? 'regalo' : 'tips'}.svg`}
+                    src={`${basePath}images/${modalOpen === 'musica' ? 'musica' : modalOpen === 'dresscode' ? 'vestuario' : modalOpen === 'regalos' ? 'regalo' : 'tips'}.svg`}
                     alt="Icono" 
                     className="w-12 h-12 md:w-16 md:h-16"
                     style={{ filter: modalOpen === 'regalos' ? 'none' : 'brightness(0) saturate(100%) invert(60%) sepia(20%) saturate(700%) hue-rotate(10deg) brightness(90%) contrast(85%)' }}
